@@ -24,7 +24,7 @@ public class Collider extends CordovaPlugin {
         } catch(Exception e) {
             view = (View) webView;
         }
-        view.setHapticFeedbackEnabled(false
+        view.setHapticFeedbackEnabled(false);
 	}
 
     @Override
