@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-collider" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<name>Collider</name>
+    <description>Collider.JAM integration plugin</description>
+	<author>Igor Khotin</author>
+	<license>zlib</license>
+    <keywords>collider.jam, game framework</keywords>
+
+    <repo>https://github.com/invider/cordova-plugin-collider</repo>
+
+	<engines>
+	    <engine name="cordova" version=">=4.0" />
+	</engines>
+
+	<js-module name="Collider" src="Collider.js">
+		<clobbers target="window.plugins.deviceFeedback" />
+	</js-module>
+
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="Collider">
+				<param name="android-package" value="com.colliderlabs.cordova.Collider" />
+				<param name="onload" value="true" />
+			</feature>
+		</config-file>
+		
+		<config-file parent="/*" target="AndroidManifest.xml">
+		</config-file>
+		
+        <source-file src="src/android/Collider.java" target-dir="src/com/colliderlabs/cordova/plugin/collider" />
+	</platform>
+</plugin>

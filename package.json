@@ -1,0 +1,33 @@
+{
+  "name": "cordova-plugin-collider",
+  "version": "0.1.0",
+  "description": "Collider.JAM Cordova plugin",
+  "cordova": {
+      "id": "cordova-plugin-collider",
+      "platforms": [
+          "android"
+      ]
+  },
+  "engines": [
+      {
+          "name": "cordova",
+          "version": ">=4.0"
+      }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/invider/cordova-plugin-collider.git"
+  },
+  "keywords": [
+    "cordova",
+    "cordova-android",
+    "collider.jam",
+    "mobile"
+  ],
+  "author": "Igor Khotin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/invider/cordova-plugin-collider/issues"
+  },
+  "homepage": "https://github.com/invider/cordova-plugin-collider#readme"
+}
