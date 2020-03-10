@@ -12,7 +12,7 @@ var self = module.exports = {
 	tap: function(type) {
         if (!type) type = self.LONG_PRESS
 
-		cordova.exec(
+		return cordova.exec(
             function() {},
             function() {}, 
             'Collider', 
@@ -20,4 +20,14 @@ var self = module.exports = {
             [type]
 		)
 	},
+
+    bing: function() {
+        return cordova.exec(
+            function() {},
+            function() {}, 
+            'Collider', 
+            'bing', 
+            []
+        )
+    }
 }

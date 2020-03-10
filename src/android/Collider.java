@@ -7,10 +7,12 @@ import org.apache.cordova.CordovaWebView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import android.content.ContentResolver;
 import android.content.Context;
 import android.view.View;
+import android.media.AudioManager;
+import android.view.SoundEffectConstants;
+
 
 public class Collider extends CordovaPlugin {
 
@@ -31,6 +33,8 @@ public class Collider extends CordovaPlugin {
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         if (action.equals("vibrate")) {
         	vibrate(args);
+        } else if (action.equals("bing")) {
+            bing()
         } else {
             return false;
         }
@@ -44,4 +48,8 @@ public class Collider extends CordovaPlugin {
 			e.printStackTrace();
 		}
 	}
+
+    void bing() {
+        audioManager.playSoundEffect(SoundEffectConstants.CLICK);
+    }
 }
