@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-collider",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Collider.JAM Cordova plugin",
   "cordova": {
       "id": "cordova-plugin-collider",
