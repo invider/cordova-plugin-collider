@@ -12,6 +12,7 @@ import android.content.Context;
 import android.view.View;
 import android.media.AudioManager;
 import android.view.SoundEffectConstants;
+import android.provider.Settings;
 
 
 public class Collider extends CordovaPlugin {
