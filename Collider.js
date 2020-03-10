@@ -32,7 +32,7 @@ var self = module.exports = {
     },
 
     config: function(success) {
-        if (!isFun(success)) throw 'feedback function is expected'
+        if (typeof success !== 'function') throw 'feedback function is expected'
 
         cordova.exec(
             success,
