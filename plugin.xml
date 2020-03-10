@@ -14,7 +14,7 @@
 	</engines>
 
 	<js-module name="Collider" src="Collider.js">
-		<clobbers target="window.plugins.deviceFeedback" />
+		<clobbers target="window.plugins.collider" />
 	</js-module>
 
 	<platform name="android">
