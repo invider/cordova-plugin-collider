@@ -17,7 +17,9 @@ import android.provider.Settings;
 
 public class Collider extends CordovaPlugin {
 
-	View view;
+    View view;
+    
+    AudioManager audioManager;
 	
 	@Override
 	public void initialize(CordovaInterface cordova, CordovaWebView webView) {
@@ -28,6 +30,8 @@ public class Collider extends CordovaPlugin {
             view = (View) webView;
         }
         view.setHapticFeedbackEnabled(false);
+
+        audioManager = (AudioManager) cordova.getActivity().getSystemService(Context.AUDIO_SERVICE);
 	}
 
     @Override
