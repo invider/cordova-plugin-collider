@@ -34,7 +34,9 @@ public class Collider extends CordovaPlugin {
         if (action.equals("vibrate")) {
         	vibrate(args);
         } else if (action.equals("bing")) {
-            bing()
+            bing();
+        } else if (action.equals("config")) {
+            getConfig(callbackContext);
         } else {
             return false;
         }
@@ -52,4 +54,25 @@ public class Collider extends CordovaPlugin {
     void bing() {
         audioManager.playSoundEffect(SoundEffectConstants.CLICK);
     }
+
+    void getConfig(CallbackContext callbackContext) {
+		ContentResolver cr = cordova.getActivity().getContentResolver();
+
+        // get feedback configuration settings
+        // 1: allowed
+        // 0: disabled
+        // -1: unspecified
+		int haptic = Settings.System.getInt(cr, Settings.System.HAPTIC_FEEDBACK_ENABLED, -1);
+		int acoustic = Settings.System.getInt(cr, Settings.System.SOUND_EFFECTS_ENABLED, -1);
+		
+		JSONObject response = new JSONObject();
+		try {
+            if (haptic >= 0) response.put("haptic", haptic == 1);
+            if (acoustic >= 0) response.put("acoustic", acoustic == 1);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		
+		callbackContext.success(response);
+	}
 }

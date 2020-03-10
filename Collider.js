@@ -12,7 +12,7 @@ var self = module.exports = {
 	tap: function(type) {
         if (!type) type = self.LONG_PRESS
 
-		return cordova.exec(
+		cordova.exec(
             function() {},
             function() {}, 
             'Collider', 
@@ -22,11 +22,23 @@ var self = module.exports = {
 	},
 
     bing: function() {
-        return cordova.exec(
+        cordova.exec(
             function() {},
             function() {}, 
             'Collider', 
             'bing', 
+            []
+        )
+    }
+
+    config: function(success) {
+        if (!isFun(success)) throw 'feedback function is expected'
+
+        cordova.exec(
+            success,
+            function() {}, 
+            'Collider', 
+            'config', 
             []
         )
     }
