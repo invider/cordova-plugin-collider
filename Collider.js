@@ -29,7 +29,7 @@ var self = module.exports = {
             'bing', 
             []
         )
-    }
+    },
 
     config: function(success) {
         if (!isFun(success)) throw 'feedback function is expected'
@@ -41,5 +41,5 @@ var self = module.exports = {
             'config', 
             []
         )
-    }
+    },
 }

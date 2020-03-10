@@ -13,7 +13,7 @@
 	    <engine name="cordova" version=">=4.0" />
 	</engines>
 
-	<js-module name="Collider" src="Collider.js">
+	<js-module name="Collider" src="collider.js">
 		<clobbers target="window.plugins.collider" />
 	</js-module>
 
